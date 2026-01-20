@@ -27,6 +27,11 @@
     "@noaqh/lint/no-try-catch-in-server": "error",
     "@noaqh/lint/no-prisma-in-server": "error",
     "@noaqh/lint/no-with-relation-method": "error",
+    "@noaqh/lint/no-findby-searchby-method": "error",
+    "@noaqh/lint/no-input-output-params-type": "error",
+    "@noaqh/lint/no-data-input-params-arg": "error",
+    "@noaqh/lint/no-expect-in-if": "error",
+    "@noaqh/lint/no-default-param": "error",
     "no-await-in-loop": "off"
   }
 }
