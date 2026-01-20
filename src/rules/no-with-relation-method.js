@@ -14,11 +14,17 @@ const rule = {
     },
     messages: {
       noWithRelationMethod:
-        "[repository-7] 'with~~'という子テーブル取得専用メソッドを作成しないでください。includeオプションで統合してください。例: findByIdWithEbayListing → find(id, { include: { ebayListing: true } })",
+        "[repository-7] 'with~~'という子テーブル取得専用メソッドを作成しないでください。includeオプションで統合してください。例: findByIdWithEbayListing → find({ id?, userName? }, { include: { ebayListing: true } })",
     },
     schema: [],
   },
   create(context) {
+    // Repositoryファイルのみに適用
+    const filename = context.filename || context.getFilename();
+    if (!filename.includes("Repository")) {
+      return {};
+    }
+
     /**
      * メソッド名が「With」を含むかチェック（大文字小文字を区別）
      * 例: findByIdWithEbayListing, getProductWithRelations
