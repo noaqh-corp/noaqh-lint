@@ -1,5 +1,5 @@
 /**
- * @fileoverview +server.ts / +page.server.ts では try-catch を使用しないルール
+ * @fileoverview .server.ts / .server.js では try-catch を使用しないルール
  * エラーは hooks.server.ts で一括ハンドリングすることを推奨
  */
 
@@ -8,22 +8,23 @@ const rule = {
     type: "suggestion",
     docs: {
       description:
-        "+server.ts / +page.server.ts では try-catch を使用しないでください。エラーは hooks.server.ts で一括ハンドリングしてください。",
+        ".server.ts / .server.js では try-catch を使用しないでください。エラーは hooks.server.ts で一括ハンドリングしてください。",
       recommended: true,
     },
     messages: {
       noTryCatch:
-        "[error-1] +server.ts / +page.server.ts では try-catch を使用しないでください。エラーは hooks.server.ts で一括ハンドリングしてください。",
+        "[error-1] .server.ts / .server.js では try-catch を使用しないでください。エラーは hooks.server.ts で一括ハンドリングしてください。",
     },
     schema: [],
   },
   create(context) {
     const filename = context.filename || context.getFilename();
+    // .server.ts / .server.js で終わるファイル、または +server.ts / +server.js を対象にする
     const isServerFile =
+      filename.endsWith(".server.ts") ||
+      filename.endsWith(".server.js") ||
       filename.endsWith("+server.ts") ||
-      filename.endsWith("+page.server.ts") ||
-      filename.endsWith("+server.js") ||
-      filename.endsWith("+page.server.js");
+      filename.endsWith("+server.js");
 
     if (!isServerFile) {
       return {};
