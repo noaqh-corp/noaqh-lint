@@ -26,6 +26,7 @@
     "unicorn/filename-case": "off",
     "@noaqh/lint/no-try-catch-in-server": "error",
     "@noaqh/lint/no-prisma-in-server": "error",
+    "@noaqh/lint/no-with-relation-method": "error",
     "no-await-in-loop": "off"
   }
 }
