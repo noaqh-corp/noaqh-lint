@@ -111,6 +111,21 @@ bunx oxlint .
 }
 ```
 
+### `@noaqh/lint/no-cross-feature-import`
+
+`features/` 内で他の `features/` をインポートすることを禁止するルール。複数featureをまたぐ処理は `flows/` に切り出すことを推奨。
+
+```json
+{
+  "extends": ["./node_modules/@noaqh/lint/.oxlintrc.json"],
+  "ignorePatterns": ["node_modules", "dist"],
+  "jsPlugins": ["@noaqh/lint"],
+  "rules": {
+    "@noaqh/lint/no-cross-feature-import": "error"
+  }
+}
+```
+
 ## License
 
 MIT
