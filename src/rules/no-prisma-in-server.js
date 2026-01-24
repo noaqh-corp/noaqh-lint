@@ -19,6 +19,10 @@ const rule = {
   },
   create(context) {
     const filename = context.filename || context.getFilename();
+    // hooks.server.ts は例外として許可（認証初期化などでprismaを使用するため）
+    if (filename.includes("hooks.server.ts") || filename.includes("hooks.server.js")) {
+      return {};
+    }
     // .server.ts / .server.js で終わるファイル、または +server.ts / +server.js を対象にする
     const isServerFile =
       filename.endsWith(".server.ts") ||
