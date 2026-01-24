@@ -11,8 +11,15 @@
     "restriction": "off"
   },
   "rules": {
+    "unicorn/require-module-specifiers": "off",
+    "no-control-regex": "off",
+    "typescript/no-extraneous-class": "off",
+    "unicorn/prefer-set-has": "off",
+    "unicorn/prefer-array-find": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "import/no-unassigned-import": "off",
     "no-unused-vars": "error",
-    "no-console": "warn",
+    "no-console": "off",
     "eqeqeq": "error",
     "no-debugger": "error",
     "no-var": "error",
