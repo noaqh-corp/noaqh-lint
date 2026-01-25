@@ -11,6 +11,7 @@ import noDataInputParamsArg from "./rules/no-data-input-params-arg.js";
 import noExpectInIf from "./rules/no-expect-in-if.js";
 import noDefaultParam from "./rules/no-default-param.js";
 import noCrossFeatureImport from "./rules/no-cross-feature-import.js";
+import noNPlusOneQuery from "./rules/no-n-plus-one-query.js";
 
 const plugin = {
   meta: {
@@ -27,6 +28,7 @@ const plugin = {
     "no-expect-in-if": noExpectInIf,
     "no-default-param": noDefaultParam,
     "no-cross-feature-import": noCrossFeatureImport,
+    "no-n-plus-one-query": noNPlusOneQuery,
   },
 };
 

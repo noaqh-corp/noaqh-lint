@@ -40,6 +40,7 @@
     "@noaqh/lint/no-data-input-params-arg": "error",
     "@noaqh/lint/no-expect-in-if": "error",
     "@noaqh/lint/no-default-param": "error",
+    "@noaqh/lint/no-n-plus-one-query": "warn",
     "no-await-in-loop": "off"
   }
 }
