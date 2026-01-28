@@ -12,6 +12,7 @@ import noExpectInIf from "./rules/no-expect-in-if.js";
 import noDefaultParam from "./rules/no-default-param.js";
 import noCrossFeatureImport from "./rules/no-cross-feature-import.js";
 import noNPlusOneQuery from "./rules/no-n-plus-one-query.js";
+import noFeaturesImportFlows from "./rules/no-features-import-flows.js";
 
 const plugin = {
   meta: {
@@ -29,6 +30,7 @@ const plugin = {
     "no-default-param": noDefaultParam,
     "no-cross-feature-import": noCrossFeatureImport,
     "no-n-plus-one-query": noNPlusOneQuery,
+    "no-features-import-flows": noFeaturesImportFlows,
   },
 };
 

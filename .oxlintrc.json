@@ -41,6 +41,7 @@
     "@noaqh/lint/no-expect-in-if": "error",
     "@noaqh/lint/no-default-param": "error",
     "@noaqh/lint/no-n-plus-one-query": "warn",
+    "@noaqh/lint/no-features-import-flows": "error",
     "no-await-in-loop": "off"
   }
 }
