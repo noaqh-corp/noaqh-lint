@@ -1,7 +1,7 @@
 /**
  * @fileoverview N+1クエリを検出するルール
  * ループ内やPromise.all内でRepositoryメソッドを呼び出すパターンを警告
- * @see [architecture-7] in docs/review.md
+ * @see [architecture-7] in template/skills/review/reference/architecture.md
  */
 
 const rule = {

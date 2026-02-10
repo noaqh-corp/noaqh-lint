@@ -13,7 +13,7 @@ const rule = {
     },
     messages: {
       noPrisma:
-        "[error-1] .server.ts / .server.js では prisma を直接使用しないでください。データベースアクセスはリポジトリ層を経由してください。",
+        "[repository-2] .server.ts / .server.js では prisma を直接使用しないでください。データベースアクセスはリポジトリ層を経由してください。",
     },
     schema: [],
   },

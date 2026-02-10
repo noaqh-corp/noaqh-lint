@@ -1,7 +1,7 @@
 /**
  * @fileoverview デフォルト値を引数に書かないルール
  * 呼び出し側で明示的に指定させることでコードの意図を明確にする
- * @see [misc-3] in docs/review.md
+ * @see [misc-3] in template/skills/review/reference/functions.md
  */
 
 const rule = {
@@ -14,7 +14,7 @@ const rule = {
     },
     messages: {
       noDefaultParam:
-        "[misc-3] 引数'{{name}}'にデフォルト値を設定しないでください。呼び出し側で明示的に指定してください。",
+        "[function-1] 引数'{{name}}'にデフォルト値を設定しないでください。呼び出し側で明示的に指定してください。",
     },
     schema: [],
   },
@@ -39,8 +39,8 @@ const rule = {
       }
     }
 
-    function checkParams(params) {
-      params.forEach(checkParam);
+    function checkParams(paramList) {
+      paramList.forEach(checkParam);
     }
 
     return {
@@ -61,7 +61,7 @@ const rule = {
 
       // メソッド定義: class { scrapeProduct(url, timeout = 5000) {} }
       MethodDefinition(node) {
-        if (node.value && node.value.params) {
+        if (node.value?.params) {
           checkParams(node.value.params);
         }
       },

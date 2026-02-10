@@ -1,7 +1,7 @@
 /**
  * @fileoverview Input/Output/Params型を作らないルール
  * 関数の引数は直接受け取るべき
- * @see [types-1] in docs/review.md
+ * @see [types-1] in template/skills/review/reference/types-data.md
  */
 
 const rule = {

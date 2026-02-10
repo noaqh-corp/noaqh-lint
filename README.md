@@ -22,9 +22,9 @@ bun add -D @noaqh/lint oxlint
 
 これだけで以下が有効になります:
 
-- **plugins**: `import`, `typescript`, `promise`, `unicorn`
-- **categories**: `correctness`(error), `suspicious`(warn), `perf`(warn)
-- **rules**: `no-console`, `eqeqeq`, `no-debugger`, `prefer-const`, `typescript/no-explicit-any` など
+- plugins: `import`, `typescript`, `promise`, `unicorn`
+- categories: `correctness`(error), `suspicious`(warn), `perf`(warn)
+- rules: `no-console`, `eqeqeq`, `no-debugger`, `prefer-const`, `typescript/no-explicit-any` など
 
 ## lintの実行
 

@@ -2,7 +2,7 @@
  * @fileoverview data、input、paramsという引数名を禁止するルール
  * 引数は具体的な名前で受け取るべき
  * ただしRepositoryは例外（Prismaのcreate/updateパターンに合わせる）
- * @see [types-2] in docs/review.md
+ * @see [types-2] in template/skills/review/reference/types-data.md
  */
 
 const rule = {
@@ -15,12 +15,12 @@ const rule = {
     },
     messages: {
       noDataInputParamsArg:
-        "[types-2] '{{name}}'という引数名は避けてください。userId, productIdなど具体的な名前で直接受け取ってください。（Repositoryでは'data'は許可）",
+        "[types-1] '{{name}}'という引数名は避けてください。userId, productIdなど具体的な名前で直接受け取ってください。（Repositoryでは'data'は許可）",
     },
     schema: [],
   },
   create(context) {
-    const forbiddenNames = ["data", "input", "params", "args", "options", "opts", "config"];
+    const forbiddenNames = ["data", "input", "params", "args", "opts", "config"];
     // Repositoryでは'data'のみ許可（Prismaパターンに合わせる）
     const repositoryAllowedNames = ["data"];
 
@@ -34,7 +34,7 @@ const rule = {
     let currentClassName = null;
 
     function isInRepositoryClass() {
-      return currentClassName && currentClassName.endsWith("Repository");
+      return currentClassName?.endsWith("Repository");
     }
 
     function shouldAllowName(name) {
@@ -59,14 +59,14 @@ const rule = {
       // ObjectPatternは許可（具体的なプロパティ名を使っているため）
     }
 
-    function checkParams(params) {
-      params.forEach(checkParam);
+    function checkParams(paramList) {
+      paramList.forEach(checkParam);
     }
 
     return {
       // クラス定義を追跡
       ClassDeclaration(node) {
-        if (node.id && node.id.name) {
+        if (node.id?.name) {
           currentClassName = node.id.name;
         }
       },
@@ -91,7 +91,7 @@ const rule = {
 
       // メソッド定義: class { createUser(data) {} }
       MethodDefinition(node) {
-        if (node.value && node.value.params) {
+        if (node.value?.params) {
           checkParams(node.value.params);
         }
       },

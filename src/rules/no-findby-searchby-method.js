@@ -1,7 +1,7 @@
 /**
  * @fileoverview findBy~~、searchBy~~という条件別メソッドを禁止するルール
  * find/searchメソッドはオプショナル引数で統合すべき
- * @see [repository-6] in docs/review.md
+ * @see [repository-1] in template/skills/review/reference/architecture.md
  */
 
 const rule = {
@@ -14,7 +14,7 @@ const rule = {
     },
     messages: {
       noFindBySearchByMethod:
-        "[repository-6] 'findBy~~'や'searchBy~~'という条件別メソッドを作成しないでください。find(id?, userId?, status?)のようにオプショナル引数で統合してください。",
+        "[repository-1] 'findBy~~'や'searchBy~~'という条件別メソッドを作成しないでください。find({ id, userId, status })のようにwhereオブジェクトで統合してください。",
     },
     schema: [],
   },

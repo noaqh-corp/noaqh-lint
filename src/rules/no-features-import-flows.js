@@ -13,7 +13,7 @@ const rule = {
     },
     messages: {
       noFeaturesImportFlows:
-        "[architecture-7] features/ 内から flows/ をインポートしないでください。依存関係は flows -> features の方向であるべきです。",
+        "[architecture-6] features/ 内から flows/ をインポートしないでください。依存関係は flows -> features の方向であるべきです。",
     },
     schema: [],
   },

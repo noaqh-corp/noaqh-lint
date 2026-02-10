@@ -1,7 +1,7 @@
 /**
  * @fileoverview with~~という子テーブル取得専用メソッドを禁止するルール
  * リレーションの取得はincludeオプションで統合的に行うべき
- * @see [repository-7] in docs/review.md
+ * @see [repository-1] in template/skills/review/reference/architecture.md
  */
 
 const rule = {
@@ -14,7 +14,7 @@ const rule = {
 		},
 		messages: {
 			noWithRelationMethod:
-				"[repository-7] 'with~~'という子テーブル取得専用メソッドを作成しないでください。includeオプションで統合してください。例: findByIdWithEbayListing → find({ id }, { ebayListing: true }) ※findは1件、searchは複数件を返す",
+				"[repository-1] 'with~~'という子テーブル取得専用メソッドを作成しないでください。includeオプションで統合してください。例: findByIdWithEbayListing → find({ id }, { ebayListing: true }) ※findは1件、searchは複数件を返す",
 		},
 		schema: [],
 	},

@@ -1,7 +1,7 @@
 /**
  * @fileoverview if文の中にexpectを書かないルール
  * 条件が満たされない場合にテストが通ってしまう可能性がある
- * @see [testing-2] in docs/review.md
+ * @see [testing-2] in template/skills/review/reference/reliability.md
  */
 
 const rule = {

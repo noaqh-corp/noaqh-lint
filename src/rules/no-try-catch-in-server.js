@@ -13,7 +13,7 @@ const rule = {
     },
     messages: {
       noTryCatch:
-        "[error-1] .server.ts / .server.js では try-catch を使用しないでください。エラーは hooks.server.ts で一括ハンドリングしてください。",
+        "[error-3] .server.ts / .server.js では try-catch を使用しないでください。エラーは hooks.server.ts で一括ハンドリングしてください。",
     },
     schema: [],
   },
